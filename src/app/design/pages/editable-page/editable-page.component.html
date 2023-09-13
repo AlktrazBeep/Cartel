@@ -1,0 +1,9 @@
+<div class="row border mt-5">
+    <div class="col-12 bg-secondary" style="height: 150px;">
+        Header banner 1
+    </div>
+    <!-- DEPENDIENDO DEL FORMATO MUESTRA UNO U OTRO -->
+    <app-format-one *ngIf="formato===1"></app-format-one>
+    <app-format-two *ngIf="formato===2"></app-format-two>
+    <app-format-three *ngIf="formato===3"></app-format-three>
+</div>
