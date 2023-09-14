@@ -3,12 +3,19 @@
     --color-primary: #d76d82;
     --color-primarys: #c94b64;
     --color-secondary: rgb(102, 133, 186);
+    --color-purple: #7C4DFF;
+    --color-gray: #BDBDBD;
+    --color-pinkl:#F8BBD0;
+    /* --color-pinkl:#F8BBD0; */
+
 }
 
 .bg-pink{
     background-color: var(--color-primary);
 }
-
+.bg-secondary{
+    background-color: var(--color-secondary);
+}
 .txt-light{
     color: aliceblue;
 }

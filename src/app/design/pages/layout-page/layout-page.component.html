@@ -87,20 +87,32 @@
                     </div>
                     <div class="col-6">
                       <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                        <input type="color" class="form-control form-control-color"  [value]="bg_color" (change)="cambiarBg($event)" title="Choose your color">
                       </div>
                     </div>
                   </div>
                 </li>
                 <li class="list-group-item">
                   <!-- COLOR TITULO -->
+                  <!-- FONDO -->
                   <div class="row">
                     <div class="col-6">
                       Fondo del título
                     </div>
                     <div class="col-6">
                       <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" [value]="titulo_color"  (change)="cambiarBgTitulo($event)" title="Choose your color">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TEXTO -->
+                  <div class="row">
+                    <div class="col-6">
+                      Texto del título
+                    </div>
+                    <div class="col-6">
+                      <div class="row justify-content-center">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput"  title="Choose your color">
                       </div>
                     </div>
                   </div>
@@ -121,9 +133,20 @@
                 </li>
                 <li class="list-group-item">
                   <!-- COLOR APARTADOS -->
+                  <!-- FONDO -->
                   <div class="row">
                     <div class="col-6">
                       Fondo de apartados
+                    </div>
+                    <div class="col-6">
+                      <div class="row justify-content-center">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      Texto de apartados
                     </div>
                     <div class="col-6">
                       <div class="row justify-content-center">

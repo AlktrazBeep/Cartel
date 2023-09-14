@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import * as g from '../../globals/format-globals';
+import { DesignServiceService } from '../../services/design-service.service';
 
 @Component({
   selector: 'app-format-one',
@@ -6,19 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./format-one.component.css']
 })
 //TODO: HACER FORMATOS Y QUE COMPARTAN INFO
-export class FormatOneComponent {
-  public apikey:string="dyal385wlvsx071fkvr2nzs6llostwantfqy5z03rd1zehf2";
-  //CONSTANTES INICIALES
-  titulo_init={
-    height: 50,
-    with: 30,
-    menubar: false,
-    inline:true,
-    plugins: [
-      'autoresize'
-    ],
-    autoresize_on_init: false,
-    toolbar:
-      'styleselect bold italic alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-  };
+export class FormatOneComponent implements OnInit{
+  @Input() bg_sub:string="#FFFFFF";
+  
+  @Input() aux:any;
+
+  constructor(private designService:DesignServiceService){}
+
+  ngOnInit(): void {
+    //SUBSCRIPCION DE SERVICIOS
+    
+    
+  }
+
+
 }
