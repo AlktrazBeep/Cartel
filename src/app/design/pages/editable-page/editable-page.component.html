@@ -12,15 +12,18 @@
                 <editor
                     [apiKey]="apikey"
                     [init]="titulo_init"
-                ></editor>
+                    initialValue="Escribe tu título"
+                >
+            </editor>
             
             </div>
         </div>
         
         <!-- DEPENDIENDO DEL FORMATO MUESTRA UNO U OTRO -->
-        <app-format-one *ngIf="formato===1" [bg_sub]="sub_color"></app-format-one>
-        <app-format-two *ngIf="formato===2"></app-format-two>
-        <app-format-three *ngIf="formato===3"></app-format-three>
+        <!-- TODO: SE ENVIA UN OBJETO COMPLETO CON LOS COLORES Y OTRO DIFERENTE CON EL CONTENIDO CON EL OBJETIVO DE PODER REUSARLO Y OBTENER LA INFORMACION -->
+        <app-format-one *ngIf="formato===1" [colors]="colors"></app-format-one>
+        <app-format-two *ngIf="formato===2" [colors]="colors"></app-format-two>
+        <app-format-three *ngIf="formato===3" [colors]="colors"></app-format-three>
     </div>
     
 </div>

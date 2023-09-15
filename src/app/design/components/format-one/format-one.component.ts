@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import * as g from '../../globals/format-globals';
 import { DesignServiceService } from '../../services/design-service.service';
+import { ColorBodyArray } from '../../Interfaces/format.interface';
 
 @Component({
   selector: 'app-format-one',
@@ -10,9 +11,12 @@ import { DesignServiceService } from '../../services/design-service.service';
 })
 //TODO: HACER FORMATOS Y QUE COMPARTAN INFO
 export class FormatOneComponent implements OnInit{
-  @Input() bg_sub:string="#FFFFFF";
-  
-  @Input() aux:any;
+  //LOS COLORES SE HEREDAN DE EDITABLE PAGE COMPONENT PARA QUE SOLO LOS MUESTRE AQUÍ
+  @Input() colors:ColorBodyArray={
+    sub_bg: '',
+    sub_txt: '',
+    ap_bg: ''
+  };
 
   constructor(private designService:DesignServiceService){}
 

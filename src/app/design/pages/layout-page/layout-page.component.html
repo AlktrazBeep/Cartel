@@ -105,28 +105,28 @@
                       </div>
                     </div>
                   </div>
-                  <!-- TEXTO -->
-                  <div class="row">
-                    <div class="col-6">
-                      Texto del título
-                    </div>
-                    <div class="col-6">
-                      <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput"  title="Choose your color">
-                      </div>
-                    </div>
-                  </div>
                 </li>
                 <li class="list-group-item">
                   <!-- COLOR DE SUBTITULOS -->
-                  
-                  <div class="row">
+                  <!-- FONDO -->
+                  <div class="row mb-1">
                     <div class="col-6">
                       Fondo de subtítulos
                     </div>
                     <div class="col-6">
                       <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" [value]="sub_bg_color"  (change)="cambiarBgSub($event)"  title="Choose your color">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- TEXTO -->
+                  <div class="row">
+                    <div class="col-6">
+                      Texto de subtítulos
+                    </div>
+                    <div class="col-6">
+                      <div class="row justify-content-center">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" [value]="sub_txt_color"  (change)="cambiarTxtSub($event)" title="Choose your color">
                       </div>
                     </div>
                   </div>
@@ -134,23 +134,13 @@
                 <li class="list-group-item">
                   <!-- COLOR APARTADOS -->
                   <!-- FONDO -->
-                  <div class="row">
+                  <div class="row mb-1">
                     <div class="col-6">
                       Fondo de apartados
                     </div>
                     <div class="col-6">
                       <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-6">
-                      Texto de apartados
-                    </div>
-                    <div class="col-6">
-                      <div class="row justify-content-center">
-                        <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput" [value]="ap_bg_color"  (change)="cambiarBgAp($event)" title="Choose your color">
                       </div>
                     </div>
                   </div>

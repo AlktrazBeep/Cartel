@@ -13,6 +13,11 @@ export class DesignServiceService {
   //COLORES
   public bgActual:BehaviorSubject<string>=new BehaviorSubject<string>("#FFFFFF");
   public bgTituloActual:BehaviorSubject<string>=new BehaviorSubject<string>("#BDBDBD");
+  
+  public bgSubActual:BehaviorSubject<string>=new BehaviorSubject<string>("#7C4DFF");//fondo subtitulos
+  public txtSubActual:BehaviorSubject<string>=new BehaviorSubject<string>("white");//texto subtitulos
+  public apBgActual:BehaviorSubject<string>=new BehaviorSubject<string>("white");//fondo apartado
+
 
 
   constructor() { }
@@ -37,5 +42,18 @@ export class DesignServiceService {
   cambiarBgTitulo(bg:string){
     g.changeTituloColor(bg);//SE ACTUALIZA EN GLOBALS
     this.bgTituloActual.next(bg);
+  }
+  //CAMBIA EL FONDO DE SUBTITULOS
+  cambiarBGSub(bg:string){
+    g.changeSubBgColor(bg);//SE ACTUALIZA EN GLOBALS
+    this.bgSubActual.next(bg);
+  }
+  cambiarTxtSub(bg:string){
+    g.changeSubTxtColor(bg);//SE ACTUALIZA EN GLOBALS
+    this.txtSubActual.next(bg);
+  }
+  cambiarBgAp(bg:string){
+    g.changeApBgColor(bg);//SE ACTUALIZA EN GLOBALS
+    this.apBgActual.next(bg);
   }
 }
