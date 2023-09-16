@@ -1,17 +1,118 @@
-<!-- INTRODUCCION -->
+
 
 <div class="row justify-content-center m-1">
-    <div class="col-12 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ 'white'">
-        <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
-            Introducción
+    <!-- PARTE IZQUIERDA -->
+    <div class="col-3 p-0">
+        <div class="row h-100 m-1">
+            <!-- Introduccion -->
+        <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+            <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                Introducción
+            </div>
+            <div class="row m-1">
+                <editor
+                class="ap-onef"
+                [apiKey]="g.key"
+                [init]="g.ap_init"
+                [(ngModel)]="bodyCartel.intro"
+            ></editor>
+            </div>
         </div>
-        <div class="row m-1">
-            texto
-            <!-- <editor
-            [apiKey]="apikey"
-            [init]="titulo_init"
-        ></editor> -->
+        <!-- OBJETIVOS -->
+        <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+            <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                Objetivos
+            </div>
+            <div class="row m-1">
+                <editor
+                class="ap-onef"
+                [apiKey]="g.key"
+                [init]="g.ap_init"
+                [(ngModel)]="bodyCartel.objetivos"
+            ></editor>
+            </div>
         </div>
-    
+        <!-- METODOLOGIA -->
+        <div class="col-12 flex-grow-1 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ colors.ap_bg">
+            <div class="row justify-content-center  m-0 p-2 text-head " [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                Metodología
+            </div>
+            <div class="row m-1 metodologia">
+                <editor
+                class="ap-onef"
+                [apiKey]="g.key"
+                [init]="g.ap_init"
+                [(ngModel)]="bodyCartel.metodologia"
+            ></editor>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- PARTE MEDIO: IMAGENES -->
+    <div class="col-6">
+
+    </div>
+
+    <!-- PARTE DERECHA -->
+    <div class="col-3 p-0">
+        <div class="row m-1 h-100">
+            <!-- Conclusion -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Conclusión
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.conclusion"
+                ></editor>
+                </div>
+            </div>
+            <!-- REFERENCIAS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Referencias
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.referencias"
+                ></editor>
+                </div>
+            </div>
+            <!-- DATOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Datos de contacto
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.datos"
+                ></editor>
+                </div>
+            </div>
+            <!-- AGRADECIMIENTOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Agradecimientos
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.agradecimientos"
+                ></editor>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+

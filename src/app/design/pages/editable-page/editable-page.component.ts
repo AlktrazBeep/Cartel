@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DesignServiceService } from '../../services/design-service.service';
 
 import * as g from '../../globals/format-globals';
-import { ColorBodyArray } from '../../Interfaces/format.interface';
+import { BodyCartel, ColorBodyArray } from '../../Interfaces/format.interface';
 
 @Component({
   selector: 'app-editable-page',
@@ -12,16 +12,10 @@ import { ColorBodyArray } from '../../Interfaces/format.interface';
 export class EditablePageComponent implements OnInit{
   public formato:number=1;//CONTIENE EL NUMERO DE FORMATO QUE SE MOSTRARÁ POR DEFAULT
 
+  public g=g; //VAR GLOBAL
+  
 
-  public apikey:string="dyal385wlvsx071fkvr2nzs6llostwantfqy5z03rd1zehf2";
-
-  //CONSTANTES INICIALES PARA EL FORMATO EDITABLE
-  public titulo_init=g.titulo_init;
-
-  //COLOR DE FONDO INICIAL Y VARIABLE DE CAMBIO
-  public bg_color=g.bg_color;
-  public titulo_color=g.titulo_color;//ESTOS SON INDEPENDIENTES IGUALES EN CADA UNA
-
+  
 
   //CON EL FIN DE  NO MANDAR 3 VARIABLES INDEPENDIENTES DE COLOR A LOS CHILD SE ENVIA ESTE ARRAY
   //INICIALIZaCION DE LOS COLORES 
@@ -30,7 +24,9 @@ export class EditablePageComponent implements OnInit{
     sub_txt: g.sub_txt_color,
     ap_bg : g.ap_bg_color,//COLOR DE APARTADOS,
   };
-
+  // INICIALIZACION DEL CONTENIDO DEL FORMATO (BODY CARTEL)
+  public bodyCartel:BodyCartel=g.bodyCartel;
+  
   //INYECCION DE SERVICIOS
   constructor(private designService:DesignServiceService){}
 
@@ -46,7 +42,7 @@ export class EditablePageComponent implements OnInit{
     //BG
    this.designService.bgActual.subscribe(
     bg=>{
-      this.bg_color=bg;
+      this.g.bg_color=bg;
     }
    );
   
@@ -54,7 +50,7 @@ export class EditablePageComponent implements OnInit{
 
    this.designService.bgTituloActual.subscribe(
     bgTitulo=>{
-      this.titulo_color=bgTitulo;
+      this.g.titulo_color=bgTitulo;
     }
    );
 
@@ -68,6 +64,12 @@ export class EditablePageComponent implements OnInit{
    this.designService.txtSubActual.subscribe(
     txtSub=>{
       this.colors.sub_txt=txtSub;
+    }
+   );
+   //COLOR PARA APARTADOS
+   this.designService.apBgActual.subscribe(
+    bgAp=>{
+      this.colors.ap_bg=bgAp;
     }
    );
   }
