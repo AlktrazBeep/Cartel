@@ -1,17 +1,149 @@
-<!-- INTRODUCCION -->
+
 
 <div class="row justify-content-center m-1">
-    <div class="col-12 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ colors.ap_bg">
+    <!-- INTRODUCCION -->
+    <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
         <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
             Introducción
         </div>
         <div class="row m-1">
             <editor
+            class="ap-twof minh-twof"
             [apiKey]="g.key"
             [init]="g.ap_init"
             [(ngModel)]="bodyCartel.intro"
         ></editor>
         </div>
-    
+    </div>
+    <!-- OBJETIVOS -->
+    <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+        <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+            Objetivos
+        </div>
+        <div class="row m-1">
+            <editor
+            class="ap-twof minh-twof"
+            [apiKey]="g.key"
+            [init]="g.ap_init"
+            [(ngModel)]="bodyCartel.objetivos"
+        ></editor>
+        </div>
+    </div>
+    <!-- GRID  -->
+    <!-- PARTE IZQUIERDA -->
+    <div class="col-3 p-0">
+        <!-- AREA DE IMAGENES -->
+        <div class="row m-1 h-100 ">
+            <!-- GRAFICA 1 -->
+            <div class="col-12 img-container border">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-auto text-center">
+                        <label > URL de gráfica 1</label>
+                        <br>
+                        <input 
+                            type="text" placeholder="Ej. sitio.com/grafica.jpg" 
+                            [(ngModel)]="mediaCartel.grafica1"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- GRAFICA 2 -->
+            <div class="col-12 img-container border">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-auto text-center">
+                        <label > URL de gráfica 2</label>
+                        <br>
+                        <input type="text" placeholder="Ej. sitio.com/grafica.jpg" [(ngModel)]="mediaCartel.grafica2">
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGENES CARROUSEL -->
+            <div class="col-12 img-container border">
+                <carousel
+                    [carousel]="mediaCartel.imagenes">
+                </carousel>
+            </div>
+        </div>
+    </div>
+    <!-- PARTE ENMEDDIO -->
+    <div class="col-6 p-0">
+        <div class="row m-1">
+            <!-- METODOLOGIA -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Metodología
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-twof minh-meto-twof"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.metodologia"
+                ></editor>
+                </div>
+            </div>
+            <!-- RESULTADOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Resultados
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-twof minh-res-twof"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.resultados"
+                ></editor>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- PARTE DERECHA -->
+    <div class="col-3 p-0">
+        <div class="row m-1">
+            <!-- Conclusion -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Conclusión
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-twof minh-auto-twof"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.conclusion"
+                ></editor>
+                </div>
+            </div>
+            <!-- REFERENCIAS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Referencias
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-twof minh-auto-twof"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.referencias"
+                ></editor>
+                </div>
+            </div>
+            <!-- DATOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Datos de contacto
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-twof minh"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.datos"
+                ></editor>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

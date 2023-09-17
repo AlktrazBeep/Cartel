@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import * as g from '../../globals/format-globals';
 import { DesignServiceService } from '../../services/design-service.service';
-import { ColorBodyArray } from '../../Interfaces/format.interface';
+import { BodyCartel, ColorBodyArray, MediaCartel } from '../../Interfaces/format.interface';
 
 @Component({
   selector: 'app-format-three',
@@ -16,7 +16,11 @@ export class FormatThreeComponent implements OnInit{
     sub_txt: '',
     ap_bg: ''
   };
-
+  
+  @Input() bodyCartel!:BodyCartel; //NO PUEDE SER NULO
+  public g=g;//VARIABLE GLOBAL
+  
+  @Input() mediaCartel!:MediaCartel; //NO PUEDE SER NULO
   constructor(private designService:DesignServiceService){}
 
   ngOnInit(): void {

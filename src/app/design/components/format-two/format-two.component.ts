@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import * as g from '../../globals/format-globals';
 import { DesignServiceService } from '../../services/design-service.service';
-import { BodyCartel, ColorBodyArray } from '../../Interfaces/format.interface';
+import { BodyCartel, ColorBodyArray, MediaCartel } from '../../Interfaces/format.interface';
 
 
 @Component({
@@ -20,6 +20,7 @@ export class FormatTwoComponent implements OnInit{
   //SECCIONES DEL CARTEL HEREDADOS
   
   @Input() bodyCartel!:BodyCartel; //NO PUEDE SER NULO
+  @Input() mediaCartel!:MediaCartel; //NO PUEDE SER NULO
 
   public g=g;//VARIABLE GLOBAL
   constructor(private designService:DesignServiceService){}

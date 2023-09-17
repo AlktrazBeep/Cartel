@@ -8,7 +8,7 @@ import * as g from '../globals/format-globals';
   providedIn: 'root'
 })
 export class DesignServiceService {
-  public formatoActual:BehaviorSubject<number>=new BehaviorSubject<number>(1);
+  public formatoActual:BehaviorSubject<number>=new BehaviorSubject<number>(1); //CAMBIAR A 1
 
   //COLORES
   public bgActual:BehaviorSubject<string>=new BehaviorSubject<string>("#FFFFFF");
@@ -28,7 +28,7 @@ export class DesignServiceService {
     this.formatoActual.next(formato);
   }
   //RETORNA EL VALOR DEL FORMATO ACTUAL INDISPENSABLE PARA LA HORA DE GUARDAR
-  getFormatoActual(){
+  getFormatoActual():number{
     return this.formatoActual.getValue();
   }
 

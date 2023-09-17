@@ -5,65 +5,115 @@
     <div class="col-3 p-0">
         <div class="row h-100 m-1">
             <!-- Introduccion -->
-        <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
-            <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
-                Introducción
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Introducción
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef minh-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.intro"
+                ></editor>
+                </div>
             </div>
-            <div class="row m-1">
-                <editor
-                class="ap-onef"
-                [apiKey]="g.key"
-                [init]="g.ap_init"
-                [(ngModel)]="bodyCartel.intro"
-            ></editor>
+            <!-- OBJETIVOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Objetivos
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef minh-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.objetivos"
+                ></editor>
+                </div>
             </div>
-        </div>
-        <!-- OBJETIVOS -->
-        <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
-            <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
-                Objetivos
+            <!-- METODOLOGIA -->
+            <div class="col-12 flex-grow-1 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head " [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Metodología
+                </div>
+                <div class="row m-1 metodologia">
+                    <editor
+                    class="ap-onef minh-meto-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.metodologia"
+                ></editor>
+                </div>
             </div>
-            <div class="row m-1">
-                <editor
-                class="ap-onef"
-                [apiKey]="g.key"
-                [init]="g.ap_init"
-                [(ngModel)]="bodyCartel.objetivos"
-            ></editor>
-            </div>
-        </div>
-        <!-- METODOLOGIA -->
-        <div class="col-12 flex-grow-1 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ colors.ap_bg">
-            <div class="row justify-content-center  m-0 p-2 text-head " [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
-                Metodología
-            </div>
-            <div class="row m-1 metodologia">
-                <editor
-                class="ap-onef"
-                [apiKey]="g.key"
-                [init]="g.ap_init"
-                [(ngModel)]="bodyCartel.metodologia"
-            ></editor>
-            </div>
-        </div>
         </div>
     </div>
-    <!-- PARTE MEDIO: IMAGENES -->
-    <div class="col-6">
-
+    <!-- PARTE MEDIO: IMAGENES y RESULTADOS -->
+    <div class="col-6 p-0">
+        <div class="row m-1">
+            <!-- Resultados -->
+            <div class="col-12  p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
+                    Resultados
+                </div>
+                <div class="row m-1">
+                    <editor
+                    class="ap-onef minh-res-onef"
+                    [apiKey]="g.key"
+                    [init]="g.ap_init"
+                    [(ngModel)]="bodyCartel.resultados"
+                ></editor>
+                </div>
+            </div>
+        </div>
+        <!-- GRAFICAS E IMAGENES -->
+        <div class="row m-1">
+            <!-- GRAFICA 1 -->
+            <div class="col-12 mb-2 img-container border" style="display: flex; align-items: center;">
+                <div class="row justify-content-center w-100">
+                    <div class="col-auto text-center">
+                        <label > URL de gráfica 1</label>
+                        <br>
+                        <input 
+                            type="text" placeholder="Ej. sitio.com/grafica.jpg" 
+                            [(ngModel)]="mediaCartel.grafica1"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+            <!-- GRAFICA 1 -->
+            <div class="col-12 mb-2 img-container border" style="display: flex; align-items: center;">
+                <div class="row justify-content-center w-100">
+                    <div class="col-auto text-center">
+                        <label > URL de gráfica 2</label>
+                        <br>
+                        <input
+                            class="form-control" 
+                            type="text" placeholder="Ej. sitio.com/grafica.jpg" 
+                            [(ngModel)]="mediaCartel.grafica2">
+                    </div>
+                </div>
+            </div>
+            <!-- IMAGENES CARROUSEL -->
+            <div class="col-12 img-container border">
+                <carousel
+                    [carousel]="mediaCartel.imagenes">
+                </carousel>
+            </div>
+        </div>
     </div>
 
     <!-- PARTE DERECHA -->
     <div class="col-3 p-0">
-        <div class="row m-1 h-100">
+        <div class="row m-1">
             <!-- Conclusion -->
-            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
+            <div class="col-12  p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ colors.ap_bg">
                 <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ colors.sub_bg+'; color:'+colors.sub_txt">
                     Conclusión
                 </div>
                 <div class="row m-1">
                     <editor
-                    class="ap-onef"
+                    class="ap-onef minh-auto-onef"
                     [apiKey]="g.key"
                     [init]="g.ap_init"
                     [(ngModel)]="bodyCartel.conclusion"
@@ -77,7 +127,7 @@
                 </div>
                 <div class="row m-1">
                     <editor
-                    class="ap-onef"
+                    class="ap-onef minh-auto-onef"
                     [apiKey]="g.key"
                     [init]="g.ap_init"
                     [(ngModel)]="bodyCartel.referencias"
@@ -91,7 +141,7 @@
                 </div>
                 <div class="row m-1">
                     <editor
-                    class="ap-onef"
+                    class="ap-onef minh-auto-onef"
                     [apiKey]="g.key"
                     [init]="g.ap_init"
                     [(ngModel)]="bodyCartel.datos"
@@ -105,7 +155,7 @@
                 </div>
                 <div class="row m-1">
                     <editor
-                    class="ap-onef"
+                    class="ap-onef minh-auto-onef"
                     [apiKey]="g.key"
                     [init]="g.ap_init"
                     [(ngModel)]="bodyCartel.agradecimientos"

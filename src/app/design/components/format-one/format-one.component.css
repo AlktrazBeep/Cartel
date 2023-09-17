@@ -1,8 +1,9 @@
-.text-head{
-    font-weight: bold;
-    font-size: 30px;
-}
+
 
 .metodologia{
-    min-height: 200px;
+    min-height: 170px;
+}
+
+.img-container{
+    height: 320px;
 }

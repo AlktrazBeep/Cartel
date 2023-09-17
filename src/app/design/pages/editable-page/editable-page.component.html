@@ -13,18 +13,29 @@
                     id="titulo"
                     [apiKey]="g.key"
                     [init]="g.titulo_init"
-                    initialValue="Escribe tu título"
+                    initialValue="<p class='text-center'>Escribe tu título</p>"
                 >
-            </editor>
-            
+                </editor>
             </div>
         </div>
         
         <!-- DEPENDIENDO DEL FORMATO MUESTRA UNO U OTRO -->
         <!-- TODO: SE ENVIA UN OBJETO COMPLETO CON LOS COLORES Y OTRO DIFERENTE CON EL CONTENIDO CON EL OBJETIVO DE PODER REUSARLO Y OBTENER LA INFORMACION -->
-        <app-format-one *ngIf="formato===1" [colors]="colors" [bodyCartel]="bodyCartel"></app-format-one>
-        <app-format-two *ngIf="formato===2" [colors]="colors" [bodyCartel]="bodyCartel"></app-format-two>
-        <app-format-three *ngIf="formato===3" [colors]="colors"></app-format-three>
+        <app-format-one *ngIf="formato===1" 
+            [colors]="colors" 
+            [bodyCartel]="bodyCartel" 
+            [mediaCartel]="mediaCartel"
+            ></app-format-one>
+        <app-format-two *ngIf="formato===2" 
+            [colors]="colors" 
+            [bodyCartel]="bodyCartel" 
+            [mediaCartel]="mediaCartel"
+            ></app-format-two>
+        <app-format-three *ngIf="formato===3" 
+            [colors]="colors" 
+            [bodyCartel]="bodyCartel" 
+            [mediaCartel]="mediaCartel"
+            ></app-format-three>
     </div>
     
 </div>

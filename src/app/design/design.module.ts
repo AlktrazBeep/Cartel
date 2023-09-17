@@ -8,6 +8,7 @@ import { FormatOneComponent } from './components/format-one/format-one.component
 import { FormatTwoComponent } from './components/format-two/format-two.component';
 import { FormatThreeComponent } from './components/format-three/format-three.component';
 import { SharedModule } from '../shared/shared.module';
+import { CarouselInputComponent } from './tools/carousel-input/carousel-input.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
        LayoutPageComponent,
        FormatOneComponent,
        FormatTwoComponent,
-       FormatThreeComponent
+       FormatThreeComponent,
+       CarouselInputComponent
   ],
   imports: [
     CommonModule,
