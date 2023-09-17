@@ -17,6 +17,8 @@ export class CarouselInputComponent {
     //SE AGREGA LINK AL CARROUSEL
     this.carousel.push(this.link);
     console.log(this.carousel);
-      
+  }
+  onRemove(i:number){
+    this.carousel.splice(i,1);
   }
 }

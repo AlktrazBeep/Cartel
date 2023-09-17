@@ -18,7 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   exports:[
     Error404PageComponent,
     EditorModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ]
 })
 export class SharedModule { }

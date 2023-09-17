@@ -170,7 +170,7 @@ export const bodyCartel:BodyCartel={
 export const mediaCartel:MediaCartel={
   grafica1: "",
   grafica2: "",
-  imagenes: [ ],
+  imagenes: [],
 }
 
 

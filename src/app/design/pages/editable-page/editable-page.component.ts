@@ -91,6 +91,7 @@ export class EditablePageComponent implements OnInit{
     this.backService.signal_to_catch.subscribe(
       signal=>{
         console.log(this.cartel);
+        if(signal=="") return;
         this.cartel.formato=this.formato.toString();
         this.cartel.body=this.bodyCartel;
         this.cartel.colors=this.colors;
@@ -99,7 +100,6 @@ export class EditablePageComponent implements OnInit{
         if(this.mediaCartel.grafica2.length==0)
           this.mediaCartel.grafica2="";
         if(this.mediaCartel.imagenes.length==0){
-          
           this.mediaCartel.imagenes=["",""];
         }else{
           if(this.mediaCartel.imagenes[0]=="" || this.mediaCartel.imagenes[0]==null || this.mediaCartel.imagenes[0]==undefined){
