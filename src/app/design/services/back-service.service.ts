@@ -20,18 +20,16 @@ export class BackServiceService {
   //SOLO ENVIA SEÑAL
   catchData(value:string){
     this.signal_to_catch.next(value);
-    // console.log("catch data");
-    // this.signal_to_catch.next(value).then();
-    // console.log("catch data2");
   }
 
   //SERVICIO QUE REVISA LOS DATOS Y DE SER COMPLETOS LOS ENVÍA AL PREVIEW
   //EN EL id MANDA EL CARTEL EN BTOA 
   preview(cartel:any){
     //SE CONVIERTE A BASE 64 EL CARTEL PARA ENVIARLO
-    let cartel_b64=btoa(JSON.stringify(cartel));
+    // let cartel_b64=btoa(JSON.stringify(cartel));
+    let cartel_b64=btoa(encodeURIComponent(JSON.stringify(cartel)));
     //ENVIA A  /PREVIEW/CARTEL... 
-    const url = this.router.createUrlTree(['../preview']);
+    const url = this.router.createUrlTree(['../ver/preview']);
     window.open(url.toString()+"/"+cartel_b64, '_blank');
   }
 

@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./design/design.module').then(m => m.DesignModule)
   },
   {
-    path: 'preview',
+    path: 'ver',
     loadChildren: ()=> import('./visual/visual.module').then(m => m.VisualModule)
   },
   {

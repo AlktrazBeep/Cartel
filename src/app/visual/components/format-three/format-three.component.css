@@ -1,0 +1,17 @@
+.img-container{
+    height: 350px;
+}
+
+
+
+.head-row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+}
+@media only screen and (max-width: 600px) {
+    /* .head-row{
+        display: block;
+    } */
+  }
+

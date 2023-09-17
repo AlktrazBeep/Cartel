@@ -1,0 +1,109 @@
+
+
+<div class="row justify-content-center m-1">
+    <!-- PARTE IZQUIERDA -->
+    <div class="col-sm-3 col-12 p-0">
+        <div class="row h-100 m-1">
+            <!-- Introduccion -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Introducción
+                </div>
+                <div class="row m-1" #introCont>
+
+                </div>
+            </div>
+            <!-- OBJETIVOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Objetivos
+                </div>
+                <div class="row m-1" #objCont>
+                </div>
+            </div>
+            <!-- METODOLOGIA -->
+            <div class="col-12 flex-grow-1 p-0 rounded border overflow-hidden" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head " [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Metodología
+                </div>
+                <div class="row m-1 metodologia" #metoCont>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- PARTE MEDIO: IMAGENES y RESULTADOS -->
+    <div class="col-sm-6 col-12 p-0">
+        <div class="row m-1">
+            <!-- Resultados -->
+            <div class="col-12  p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Resultados
+                </div>
+                <div class="row m-1" #resCont>
+                </div>
+            </div>
+        </div>
+        <!-- GRAFICAS E IMAGENES -->
+        <div class="row m-1">
+            <!-- GRAFICA 1 -->
+            <div class="col-12 mb-2 img-container border" 
+                [style]="
+                    'display: flex; align-items: center;'+
+                    (cartel.media.grafica1 | image) 
+                    " >
+            </div>
+            <!-- GRAFICA 1 -->
+            <div class="col-12 mb-2 img-container border" 
+                [style]="
+                'display: flex; align-items: center;'+
+                (cartel.media.grafica2 | image) 
+                " >
+            </div>
+            <!-- IMAGENES CARROUSEL -->
+            <div class="col-12 p-0 border">
+                <carousel [imageArray]="cartel.media.imagenes | imageArray">
+
+                </carousel>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTE DERECHA -->
+    <div class="col-sm-3 col-12 p-0">
+        <div class="row m-1">
+            <!-- Conclusion -->
+            <div class="col-12  p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Conclusión
+                </div>
+                <div class="row m-1" #conCont>
+                </div>
+            </div>
+            <!-- REFERENCIAS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Referencias
+                </div>
+                <div class="row m-1" #refCont>
+                </div>
+            </div>
+            <!-- DATOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Datos de contacto
+                </div>
+                <div class="row m-1" #datosCont>
+                </div>
+            </div>
+            <!-- AGRADECIMIENTOS -->
+            <div class="col-12 p-0 rounded border overflow-hidden mb-2" [style]=" 'background-color:'+ cartel.colors.ap_bg">
+                <div class="row justify-content-center  m-0 p-2 text-head" [style]=" 'background-color:'+ cartel.colors.sub_bg+'; color:'+cartel.colors.sub_txt">
+                    Agradecimientos
+                </div>
+                <div class="row m-1" #agraCont>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

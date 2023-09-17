@@ -14,6 +14,7 @@ import { map, switchMap, tap } from 'rxjs';
 })
 export class EditablePageComponent implements OnInit{
   
+  public titulo_cont:string="<p class='text-center'>Escribe tu título</p>";
 
 
   public formato:number=1;//CONTIENE EL NUMERO DE FORMATO QUE SE MOSTRARÁ POR DEFAULT
@@ -29,6 +30,7 @@ export class EditablePageComponent implements OnInit{
     sub_bg: g.sub_bg_color,//COLORES DE SUBTITULO
     sub_txt: g.sub_txt_color,
     ap_bg : g.ap_bg_color,//COLOR DE APARTADOS,
+    title_bg : g.titulo_color,//COLOR DE titulo,
   };
   // INICIALIZACION DEL CONTENIDO DEL FORMATO (BODY CARTEL)
   public bodyCartel:BodyCartel=g.bodyCartel;
@@ -95,17 +97,11 @@ export class EditablePageComponent implements OnInit{
         this.cartel.formato=this.formato.toString();
         this.cartel.body=this.bodyCartel;
         this.cartel.colors=this.colors;
+        this.cartel.title=this.titulo_cont;
         if(this.mediaCartel.grafica1.length==0)
           this.mediaCartel.grafica1="";
         if(this.mediaCartel.grafica2.length==0)
           this.mediaCartel.grafica2="";
-        if(this.mediaCartel.imagenes.length==0){
-          this.mediaCartel.imagenes=["",""];
-        }else{
-          if(this.mediaCartel.imagenes[0]=="" || this.mediaCartel.imagenes[0]==null || this.mediaCartel.imagenes[0]==undefined){
-            this.mediaCartel.imagenes=["",""];
-          }
-        }
 
         this.cartel.media=this.mediaCartel;
         console.log(this.cartel);

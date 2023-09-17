@@ -15,7 +15,8 @@ export class FormatTwoComponent implements OnInit{
   @Input() colors:ColorBodyArray={
     sub_bg: '',
     sub_txt: '',
-    ap_bg: ''
+    ap_bg: '',
+    title_bg: ''
   };
   //SECCIONES DEL CARTEL HEREDADOS
   

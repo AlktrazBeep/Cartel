@@ -8,12 +8,12 @@
     <div class="col-12 p-2">
         <!-- TITULO -->
         <div class="row justify-content-center m-1">
-            <div class="col-12 p-2 rounded" [style]=" 'background-color:'+ g.titulo_color">
+            <div class="col-12 p-2 rounded" [style]=" 'background-color:'+ cartel.colors.title_bg">
                 <editor
                     id="titulo"
                     [apiKey]="g.key"
                     [init]="g.titulo_init"
-                    initialValue="<p class='text-center'>Escribe tu título</p>"
+                    [(ngModel)]="titulo_cont"
                 >
                 </editor>
             </div>

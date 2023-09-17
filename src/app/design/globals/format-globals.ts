@@ -61,12 +61,11 @@ export const ap_init={
     br_in_pre: false,
 
     //ESTILOS SOLO PARA APARTADOS ALOMEJOR PUEDEN PASARSE AL FORMATO DE CSS DE CADA UNO
+    //  BORRADO TEMPORAL
+    // br[data-mce-bogus="1"] {
+    //   display:none;
+    // }
     content_style:`
-
-    br[data-mce-bogus="1"] {
-      display:none;
-    }
-
     /* CLASES PARA TINYMCE GENERAL solo para el formato 1*/
    .ap-onef .mce-content-body{
        font-size: 16px;
@@ -183,6 +182,7 @@ export const cartel:Cartel={
     sub_bg: sub_bg_color,
     sub_txt: sub_txt_color,
     ap_bg : ap_bg_color,
+    title_bg: titulo_color
   },
   body:   bodyCartel,
   media:  mediaCartel,
