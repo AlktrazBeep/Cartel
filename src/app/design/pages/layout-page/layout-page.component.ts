@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DesignServiceService } from '../../services/design-service.service';
 
 
 import * as g from '../../globals/format-globals';
 import { BackServiceService } from '../../services/back-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,8 +13,8 @@ import { BackServiceService } from '../../services/back-service.service';
   styles: [
   ]
 })
-export class LayoutPageComponent {
-  public name:string="";
+export class LayoutPageComponent implements OnInit {
+  public name:string="Ejemplo";
   //VALORES POR DEFAULT DEL COLOR INICIAL
   public bg_color=g.bg_color;
   public titulo_color=g.titulo_color;
@@ -25,7 +26,21 @@ export class LayoutPageComponent {
   // INYECCION DE SERVICIOS
   constructor(
       private designService:DesignServiceService,
-      private backService:BackServiceService){}
+      private backService:BackServiceService,
+      private router:Router){}
+
+  ngOnInit(): void {
+    //RECIBE EL TITULO QUE ANERIORMENTE SE METIO
+    this.designService.titulo.subscribe(
+      titulo=>{
+        if(titulo==""){
+          this.router.navigate([""]);
+          return;
+        }
+        this.name=titulo;
+      }
+    );
+  }
 
   
 
@@ -64,11 +79,7 @@ export class LayoutPageComponent {
   }
 
   toSave(){
-    //SE VALIDA NOMBRE SOLO PARA GUARDADO Y FINALIZADO
-    // if(this.name==""){
-    //   alert("Primero requiere tener un nombre");
-    //   return;
-    // }
+    this.backService.catchData("save");
   }
 
 

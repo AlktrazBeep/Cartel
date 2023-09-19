@@ -1,0 +1,32 @@
+<div class="row mx-1 justify-content-center" style="margin-top: 100px;">
+    <form class="col-9 rounded border shadow p-5" [formGroup]="form">
+        <div class="row text-center">
+            <h1>Bienvenid@</h1>
+        </div>
+        <div class="row text-center mb-3">
+            <h2>Ingresa el nombre con el que quieres guardar tu cartel</h2>
+        </div>
+        <input type="email" class="form-control text-center"   placeholder="Ej. Cartel Version 1" formControlName="name">
+        <div class="row justify-content-center mt-2">
+            <div class="col-auto">
+                <button class="btn btn-primary shadow" (click)="onSubmit()" [disabled]="submiting==true">
+                    <span *ngIf="submiting==false">Continuar</span>
+                    <div *ngIf="submiting" class="spinner-border text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>                      
+                </button>
+            </div>
+        </div>
+        <div  class="row text-center mt-2">
+            <span *ngIf="isValidField('name')" class="badge text-bg-danger" style="font-size: 15px;">
+                {{getFieldError('name') + " intenta otro"}}
+            </span>
+        </div>
+        <div  class="row text-center mt-2">
+            <span *ngIf="errorBack!=''" class="badge text-bg-danger" style="font-size: 15px;">
+                {{errorBack}}
+            </span>
+        </div>
+
+    </form>
+</div>

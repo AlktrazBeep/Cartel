@@ -57,7 +57,8 @@ export class EditablePageComponent implements OnInit{
     //BG
    this.designService.bgActual.subscribe(
     bg=>{
-      this.g.bg_color=bg;
+      // this.g.bg_color=bg;//CAMBIE ESTO
+      this.colors.title_bg=bg;
     }
    );
   
@@ -65,7 +66,8 @@ export class EditablePageComponent implements OnInit{
 
    this.designService.bgTituloActual.subscribe(
     bgTitulo=>{
-      this.g.titulo_color=bgTitulo;
+      // this.g.titulo_color=bgTitulo;//CAMBIE ESTO
+      this.colors.title_bg=bgTitulo;
     }
    );
 
@@ -109,6 +111,13 @@ export class EditablePageComponent implements OnInit{
         //DEPENDIENDO EL DESTINO DE LA SEÑAL SE ENVIA A UN METODO DE SERVICIO DIFERENTE
         if(signal=="preview"){
               this.backService.preview(this.cartel);
+        }
+        if(signal=="save"){
+          this.backService.saveCartel(this.designService.getTitulo(),this.cartel).subscribe(
+            res=>{
+              console.log(res);
+            }
+          );
         }
       }
     );

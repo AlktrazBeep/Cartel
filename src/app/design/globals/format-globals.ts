@@ -176,7 +176,7 @@ export const mediaCartel:MediaCartel={
 //CARTEL COMPLETO INICIAL
 
 export const cartel:Cartel={
-  name: "",
+  // name: "",
   title: "",
   colors: {
     sub_bg: sub_bg_color,
@@ -191,6 +191,4 @@ export const cartel:Cartel={
 //GLOBALES PARA BACKEND QUE CAMBIAN EN PRODUCTIVO
 
 //AQUI DEBE ESTAR EL CORE DE LA API
-export const API_CORE:string="";
-
-export const URL_PREVIEW:string="localhost:4200/preview/";
+export const API_CORE:string="http://localhost/back/";

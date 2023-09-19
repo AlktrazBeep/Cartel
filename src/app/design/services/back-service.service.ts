@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Cartel } from '../Interfaces/format.interface';
 
 
 import * as g from '../globals/format-globals';
+import { Res } from '../Interfaces/api.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class BackServiceService {
 
   public signal_to_catch:BehaviorSubject<string>=new BehaviorSubject<string>("");//EMITE SEÑAL
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+    private http:HttpClient) { }
 
   //SE OBTIENE LO QUE HAY DEL CARTEL, ENVIA UNA SEÑAL PARA QUE LA ESCUCHE EDITABLE Y OBTENER LOS DATOS ESENCIALES
   //SOLO ENVIA SEÑAL
@@ -24,7 +27,7 @@ export class BackServiceService {
 
   //SERVICIO QUE REVISA LOS DATOS Y DE SER COMPLETOS LOS ENVÍA AL PREVIEW
   //EN EL id MANDA EL CARTEL EN BTOA 
-  preview(cartel:any){
+  preview(cartel:Cartel){
     //SE CONVIERTE A BASE 64 EL CARTEL PARA ENVIARLO
     // let cartel_b64=btoa(JSON.stringify(cartel));
     let cartel_b64=btoa(encodeURIComponent(JSON.stringify(cartel)));
@@ -33,6 +36,24 @@ export class BackServiceService {
     window.open(url.toString()+"/"+cartel_b64, '_blank');
   }
 
-  
+  //CREAR NUEVO CARTEL RECIBE SOLO EL NOMBRE
+  newCartel(name:string):Observable<Res>{
+    //ENVIA EL NOMBRE AL SERVICIO
+    return this.http.post<Res>(`${g.API_CORE}nuevo_cartel.php`,{ name: name });
+  }
+  //GUARDAR CARTEL (ACTUALIZAR) RECIBE EL NOMBRE Y EL CARTEL
+  saveCartel(name:string,cartel:Cartel):Observable<Res>{
+    let cartel_b64=btoa(encodeURIComponent(JSON.stringify(cartel)));
+    
+    return this.http.post<Res>(`${g.API_CORE}update_cartel.php`,{
+      name: name,
+      cartel:cartel_b64
+    });
+  }
+  //OBTENER CARTELES NO RECIBE NADA
+
+  //OBTENER CARTEL POR ID RECIBE SOLO UN NUMERO
+
+  //PONER EN FINALIZADO SOLO RECIBE EL NOMBRE
 
 }

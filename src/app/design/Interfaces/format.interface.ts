@@ -24,7 +24,7 @@ export interface MediaCartel{
 
 
 export interface Cartel{
-    name:   string;
+    // name:   string;
     title:  string;
     colors: ColorBodyArray;
     body:   BodyCartel;

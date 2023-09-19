@@ -14,12 +14,16 @@ const routes: Routes = [
     loadChildren: ()=> import('./visual/visual.module').then(m => m.VisualModule)
   },
   {
+    path: 'home',
+    loadChildren: ()=> import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
     path: '404',
     component: Error404PageComponent
   },
   {
     path: '',
-    redirectTo: 'editar',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {

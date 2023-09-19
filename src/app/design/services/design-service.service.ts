@@ -8,6 +8,8 @@ import * as g from '../globals/format-globals';
   providedIn: 'root'
 })
 export class DesignServiceService {
+  public titulo:BehaviorSubject<string>=new BehaviorSubject<string>("");//INICIALMENTE VACIO
+
   public formatoActual:BehaviorSubject<number>=new BehaviorSubject<number>(1); //CAMBIAR A 1
 
   //COLORES
@@ -55,5 +57,13 @@ export class DesignServiceService {
   cambiarBgAp(bg:string){
     g.changeApBgColor(bg);//SE ACTUALIZA EN GLOBALS
     this.apBgActual.next(bg);
+  }
+
+  cambiarTitulo(txt:string){
+    this.titulo.next(txt);
+  }
+
+  getTitulo():string{
+    return this.titulo.getValue();
   }
 }

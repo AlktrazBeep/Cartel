@@ -24,7 +24,7 @@
             <li class="list-group-item" *ngFor="let item of carousel;let i=index;">
                 <div class="row">
                     <div class="col-10 overflow-hidden">
-                        <span>{{item}}</span>
+                        <span>{{item | slice:0:40}}...</span>
                     </div>
                     <div class="col-2">
                         <div class="row justify-content-end ">

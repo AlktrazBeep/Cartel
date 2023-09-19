@@ -8,8 +8,10 @@ const routes: Routes = [
     path: '',
     component: LayoutPageComponent,
     children: [
-      { path: ':id', component: EditablePageComponent },
-      { path: '', component: EditablePageComponent, pathMatch: 'full' }
+      { path: 'nuevo', component: EditablePageComponent }, //CARTELES NUEVOS
+      { path: 'cartel/:id', component: EditablePageComponent },//CARTELES QUE YA EXISTEN 
+      { path: '', redirectTo: 'nuevo', pathMatch: 'full' },//CUALQUIER COSA LA MANDA A 404
+      { path: '**', redirectTo: '/404' }
     ]
   }
 ];

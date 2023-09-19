@@ -2,9 +2,9 @@
 <a class="btn-primary floating-button" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
   <i class="bi bi-arrow-right"></i>
 </a>
-  
+
 <!-- SIDEBAR -->
-<div class="offcanvas offcanvas-start show bg-pink txt-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start bg-pink txt-light" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menú</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -24,7 +24,7 @@
             <div class="accordion-body">
               <div class="row justify-content-center mb-2">
                 <div class="col-auto">
-                    <button class="btn btn-primary">Guardar</button>
+                    <button class="btn btn-primary" (click)="toSave()">Guardar</button>
                 </div>
               </div>
               <div class="row justify-content-center mb-2">
@@ -63,7 +63,7 @@
                   <label class="form-check-label" for="thirdRadio">Formato 3</label>
                 </li>
               </ul>
-              
+
 
             </div>
           </div>
@@ -77,7 +77,7 @@
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              
+
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                   <!-- COLOR LIENZO -->
@@ -158,8 +158,9 @@
 <!-- INPUT DEL NOMBRE  -->
 <div class="row justify-content-center mt-3">
   <div class="col-6 text-center">
-    <label for="" class="form-label" [(ngModel)]="name">Nombre del cartel</label>
-    <input type="email" class="form-control" placeholder="Ej. Cartel Version 1">
+    <label for="" class="form-label" ><strong>Nombre del cartel</strong></label>
+    <input type="email" class="form-control text-center"  disabled [(ngModel)]="name">
+    <!-- placeholder="Ej. Cartel Version 1" -->
   </div>
 </div>
 <div class="row mx-2">

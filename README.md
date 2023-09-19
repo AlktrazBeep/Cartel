@@ -1,27 +1,11 @@
-# Cartel
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Cartel "E-Cartel" para proyecto "Colaboración en el desarrollo de proyectos médicos universitarios"
+## PARA EJECUTAR EN LOCAL 
+1. Los archivos de para generación de la API estan en la carpeta `back` de la raiz, moverlos al servidor local de modo que queden los endpoints desde back por ejemplo `localhost/back/crear_cartel.php`
+2. Cambiar de ser necesario las configuraciones de conexion a la base de datos
+3. Situarse en la carpeta raiz y ejecutar `ng serve` o `npm start`  
+## PARA PRODUCTIVO 
+1. Los archivos de para generación de la API estan en la carpeta `back` de la raiz, moverlos al servidor de modo que queden los endpoints desde back por ejemplo `localhost/back/crear_cartel.php`
+2. Cambiar de ser necesario las configuraciones de conexion a la base de datos por parte del back y el endpoint
+3. Cambiar de ser necesario las configuraciones del core API en la variable `API_CORE` que se consume desde la ruta relativa del cartel `\src\app\design\globals\format-globals.ts` por la ruta actual donde se encuentra el core de la API.
+4. Situarse en la carpeta raiz y ejecutar `ng build` para generar el compilado.
+5. El comando anterior generará una carpeta `dist` situada en el folder `folder` la cual es la que se debe subir al servidor productivo.

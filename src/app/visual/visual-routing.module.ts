@@ -12,8 +12,8 @@ const routes: Routes = [
     children: [
       { path: 'preview/:id', component: VisualPageComponent}, //PUEDE ENTRAR ID QUE ES EL CARTEL EN LA DB
       { path: 'cartel/:id', component: VisualPageComponent}, //PUEDE ENTRAR ID DE LA BASE
-      // { path: '', pathMatch: 'full', component: Error404PageComponent},//PUEDE ENTRAR VACIO INCLUSIVE
-      // { path: '**', redirectTo: ''},//CUANDO SEA CUALQUIER COSA
+      { path: '', pathMatch: 'full', redirectTo: '/404'},//PUEDE ENTRAR VACIO INCLUSIVE
+      { path: '**', redirectTo: ''},//CUANDO SEA CUALQUIER COSA
     ]
   }
 ];
