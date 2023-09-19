@@ -34,7 +34,7 @@ export class VisualPageComponent implements OnInit,AfterViewInit{
 
           if(url.includes("preview")){
             this.cartel=JSON.parse(decodeURIComponent(atob(params["id"]))) as Cartel; //SI ES POR PREVIEW OBTIENE COMO UN OBJETO 
-            // console.log(this.cartel);
+            console.log(this.cartel);
           }
           if(url.includes("cartel")){
             //SE OBTIENE POR BASE DE DATOS

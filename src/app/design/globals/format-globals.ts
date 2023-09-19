@@ -179,6 +179,7 @@ export const cartel:Cartel={
   // name: "",
   title: "",
   colors: {
+    bg: bg_color,
     sub_bg: sub_bg_color,
     sub_txt: sub_txt_color,
     ap_bg : ap_bg_color,

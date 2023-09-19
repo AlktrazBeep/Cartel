@@ -12,6 +12,7 @@ import { BodyCartel, ColorBodyArray, MediaCartel } from '../../Interfaces/format
 export class FormatThreeComponent implements OnInit{
   
   @Input() colors:ColorBodyArray={
+    bg: '',
     sub_bg: '',
     sub_txt: '',
     ap_bg: '',

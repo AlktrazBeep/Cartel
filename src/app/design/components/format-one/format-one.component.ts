@@ -13,6 +13,7 @@ import { BodyCartel, ColorBodyArray, MediaCartel } from '../../Interfaces/format
 export class FormatOneComponent implements OnInit{
   //LOS COLORES SE HEREDAN DE EDITABLE PAGE COMPONENT PARA QUE SOLO LOS MUESTRE AQUÍ
   @Input() colors:ColorBodyArray={
+    bg: '',
     sub_bg: '',
     sub_txt: '',
     ap_bg: '',

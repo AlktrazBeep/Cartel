@@ -8,8 +8,6 @@ export class ImageArrayPipe implements PipeTransform {
     transform(array: string[]): string[] {
         
         if(array.length==0){
-            console.log("vacio");
-            
             return [            
             "./assets/no-image.jpeg",
             "./assets/no-image.jpeg",

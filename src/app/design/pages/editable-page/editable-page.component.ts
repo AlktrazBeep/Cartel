@@ -27,6 +27,7 @@ export class EditablePageComponent implements OnInit{
   //CON EL FIN DE  NO MANDAR 3 VARIABLES INDEPENDIENTES DE COLOR A LOS CHILD SE ENVIA ESTE ARRAY
   //INICIALIZaCION DE LOS COLORES 
   public colors:ColorBodyArray={
+    bg: g.bg_color,
     sub_bg: g.sub_bg_color,//COLORES DE SUBTITULO
     sub_txt: g.sub_txt_color,
     ap_bg : g.ap_bg_color,//COLOR DE APARTADOS,
@@ -57,8 +58,7 @@ export class EditablePageComponent implements OnInit{
     //BG
    this.designService.bgActual.subscribe(
     bg=>{
-      // this.g.bg_color=bg;//CAMBIE ESTO
-      this.colors.title_bg=bg;
+      this.colors.bg=bg;//CAMBIE ESTO
     }
    );
   
@@ -112,6 +112,8 @@ export class EditablePageComponent implements OnInit{
         if(signal=="preview"){
               this.backService.preview(this.cartel);
         }
+
+        //CREAR MODAL CUANDO SE ESTE ENVIANDO
         if(signal=="save"){
           this.backService.saveCartel(this.designService.getTitulo(),this.cartel).subscribe(
             res=>{

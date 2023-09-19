@@ -1,4 +1,5 @@
 export interface ColorBodyArray{
+    bg: string;
     title_bg: string;
     sub_bg: string;//COLORES DE SUBTITULO
     sub_txt: string;

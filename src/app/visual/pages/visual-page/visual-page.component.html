@@ -1,13 +1,15 @@
 <!-- SI YA EXISTE EL CARTEL -->
-<ng-container *ngIf="cartel">
-    <!-- TITULO -->
-    <div class="row justify-content-center m-1">
-        <div class="col-12 p-2 rounded title" [style]=" 'background-color: '+cartel.colors.title_bg" #tituloContent>
-            
+<ng-container *ngIf="cartel" >
+    <div class="col-12 p-1" [style]=" 'background-color:'+ cartel.colors.bg">
+        <!-- TITULO -->
+        <div class="row justify-content-center m-1">
+            <div class="col-12 p-2 rounded title" [style]=" 'background-color: '+cartel.colors.title_bg" #tituloContent>
+                
+            </div>
         </div>
+        <app-format-one *ngIf="cartel.formato=='1'" [cartel]="cartel"></app-format-one>
+        <app-format-two *ngIf="cartel.formato=='2'" [cartel]="cartel"></app-format-two>
+        <app-format-three *ngIf="cartel.formato=='3'" [cartel]="cartel"></app-format-three>
     </div>
-    <app-format-one *ngIf="cartel.formato=='1'" [cartel]="cartel"></app-format-one>
-    <app-format-two *ngIf="cartel.formato=='2'" [cartel]="cartel"></app-format-two>
-    <app-format-three *ngIf="cartel.formato=='3'" [cartel]="cartel"></app-format-three>
 </ng-container>
 

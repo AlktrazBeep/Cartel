@@ -13,6 +13,7 @@ import { BodyCartel, ColorBodyArray, MediaCartel } from '../../Interfaces/format
 export class FormatTwoComponent implements OnInit{
   //COLORES HEREDADOS
   @Input() colors:ColorBodyArray={
+    bg: '',
     sub_bg: '',
     sub_txt: '',
     ap_bg: '',
