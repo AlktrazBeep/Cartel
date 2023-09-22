@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { Observable, of, switchMap } from 'rxjs';
 import { Res } from 'src/app/design/Interfaces/api.interface';
@@ -11,21 +11,26 @@ import { BackServiceService } from 'src/app/design/services/back-service.service
   templateUrl: './visual-page.component.html',
   styleUrls: ['./visual-page.component.css']
 })
-export class VisualPageComponent implements OnInit,AfterViewInit{
-  @ViewChild('tituloContent') titulo!: ElementRef;
+export class VisualPageComponent implements OnInit,AfterViewChecked{
+  @ViewChild('tituloContent',{ static: false }) titulo!: ElementRef;
 
   public cartel!:Cartel;
   //RECIBIR INFO DEL ID
   constructor(private route:ActivatedRoute,
     private router:Router,
     private backService:BackServiceService){}
+  
+    
 
-  ngAfterViewInit(): void {
+  ngAfterViewChecked(): void {
     if(this.titulo){
       this.titulo.nativeElement.innerHTML = this.cartel.title;
+      console.log(this.titulo+" checked1 "+this.cartel.title); 
     }
+    // console.log(this.titulo+" checked "+this.cartel.title); 
   }
 
+  
   ngOnInit(): void {
     //OBTENIENDO PARAMETROS
     this.route.params.subscribe(
@@ -38,7 +43,7 @@ export class VisualPageComponent implements OnInit,AfterViewInit{
 
           if(url.includes("preview")){
             this.cartel=JSON.parse(decodeURIComponent(atob(params["id"]))) as Cartel; //SI ES POR PREVIEW OBTIENE COMO UN OBJETO 
-            console.log(this.cartel);
+            // console.log(this.cartel);
           }
           if(url.includes("cartel")){
             //SE OBTIENE POR BASE DE DATOS
@@ -54,6 +59,8 @@ export class VisualPageComponent implements OnInit,AfterViewInit{
                 }else{
                   // console.log(`BIEN ${JSON.stringify(res)}  ${id_cartel} "true"`);
                   this.cartel=JSON.parse(decodeURIComponent(atob(res.res[0].cartel_encoded))) as Cartel; //SI ES POR PREVIEW OBTIENE COMO UN OBJETO 
+                  console.log(this.titulo+" subscribe "+this.cartel.title); 
+
                 }
               },
               error: (error)=>{
