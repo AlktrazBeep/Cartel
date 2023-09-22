@@ -2,7 +2,9 @@ import { JsonPipe } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { Observable, of, switchMap } from 'rxjs';
+import { Res } from 'src/app/design/Interfaces/api.interface';
 import { Cartel } from 'src/app/design/Interfaces/format.interface';
+import { BackServiceService } from 'src/app/design/services/back-service.service';
 
 @Component({
   selector: 'app-visual-page',
@@ -14,7 +16,9 @@ export class VisualPageComponent implements OnInit,AfterViewInit{
 
   public cartel!:Cartel;
   //RECIBIR INFO DEL ID
-  constructor(private route:ActivatedRoute,private router:Router){}
+  constructor(private route:ActivatedRoute,
+    private router:Router,
+    private backService:BackServiceService){}
 
   ngAfterViewInit(): void {
     if(this.titulo){
@@ -38,12 +42,32 @@ export class VisualPageComponent implements OnInit,AfterViewInit{
           }
           if(url.includes("cartel")){
             //SE OBTIENE POR BASE DE DATOS
+            let id_cartel:string=params["id"];
+            let byId:string="true";
+            // console.log(`id del cartel ${id_cartel}`)
+            this.backService.getCartel(id_cartel,byId).subscribe(
+              {
+                next:res=>{
+
+                if(res.error){
+                  console.log(`ERROR`);
+                }else{
+                  // console.log(`BIEN ${JSON.stringify(res)}  ${id_cartel} "true"`);
+                  this.cartel=JSON.parse(decodeURIComponent(atob(res.res[0].cartel_encoded))) as Cartel; //SI ES POR PREVIEW OBTIENE COMO UN OBJETO 
+                }
+              },
+              error: (error)=>{
+                console.log("Hubo error");
+              }
+            }
+            );
+
           }
 
         }catch(e){
           console.log(`error: ${e}`);
           //SI ESTA MAL LA ENVIA AL ERROR
-          this.router.navigate(['../404']);
+          this.router.navigate(['/404']);
         }
         
       }

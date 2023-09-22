@@ -81,6 +81,9 @@ export class LayoutPageComponent implements OnInit {
   toSave(){
     this.backService.catchData("save");
   }
+  toFinalize(){
+    this.backService.catchData("finalize");
+  }
 
 
 

@@ -113,11 +113,33 @@ export class EditablePageComponent implements OnInit{
               this.backService.preview(this.cartel);
         }
 
-        //CREAR MODAL CUANDO SE ESTE ENVIANDO
+        //CREAR MODAL CUANDO SE ESTE ENVIANDO SAVE Y FINALIZE
         if(signal=="save"){
           this.backService.saveCartel(this.designService.getTitulo(),this.cartel).subscribe(
             res=>{
-              console.log(res);
+              if(res.res)
+                alert(`${res.res}`);
+              else
+                alert(`${res.error}`);
+
+            },
+            error=>{
+              alert(`Ocurrió un error`);
+            }
+          );
+        }
+        
+        if(signal=="finalize"){
+          this.backService.finalizeCartel(this.designService.getTitulo()).subscribe(
+            res=>{
+              if(res.res)
+                alert(`${res.res}`);
+              else
+                alert(`${res.error}`);
+
+            },
+            error=>{
+              alert(`Ocurrió un error`);
             }
           );
         }

@@ -1,5 +1,5 @@
 <div class="row mx-1 justify-content-center" style="margin-top: 100px;">
-    <form class="col-9 rounded border shadow p-5" [formGroup]="form">
+    <form class="col-10 col-sm-7     rounded border shadow p-5" [formGroup]="form">
         <div class="row text-center">
             <h1>Bienvenid@</h1>
         </div>
@@ -19,7 +19,7 @@
         </div>
         <div  class="row text-center mt-2">
             <span *ngIf="isValidField('name')" class="badge text-bg-danger" style="font-size: 15px;">
-                {{getFieldError('name') + " intenta otro"}}
+                {{getFieldError('name')}}
             </span>
         </div>
         <div  class="row text-center mt-2">

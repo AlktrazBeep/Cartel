@@ -7,11 +7,11 @@
     if(isset($entityBody)){
 
         if($connect){
-            //VARIABLES 
-            $name=json_decode($entityBody)->name;//NOMBRE DEL CARTEL A ACTUALIZAR
-            $cartel=json_decode($entityBody)->cartel;//cartel contenido
-            $created_at=json_decode($entityBody)->created_at;//fecha de creacion
-            $updated_at=json_decode($entityBody)->updated_at;//fecha de actualiz
+            // VARIABLES 
+            $name=json_decode($entityBody)->name;//SE OBTIENEN VARIABLES DEL BODY DE LO CONTRARIO RETORNA
+            if($name==null){
+                return;
+            }
             $arrResultado=array();//RESULTADOS
             
             $sql = "SELECT * FROM carteles WHERE nombre=?";
@@ -26,7 +26,7 @@
                     $arrResultado['error'] = "No existe el cartel $name";
                 }else{
                     // $arrResultado['res'] = "si existe $name";
-                    $arrResultado=updateCartel($cartel,$created_at,$updated_at,$name,$connect,$arrResultado);
+                    $arrResultado=updateCartel($name,$connect,$arrResultado);
                 }
 
                 /* Cerramos el $stmt */
@@ -43,7 +43,7 @@
 
     echo(json_encode($arrResultado));
 
-    function updateCartel($cartel,$created_at, $updated_at, $name ,$connect,$arrResultado){
+    function updateCartel($name ,$connect,$arrResultado){
         $update="UPDATE carteles SET finalizado=? WHERE nombre=?;";
         $stmt=$connect->prepare($update);//SE VUELVE A PREPARAR
         if($stmt){

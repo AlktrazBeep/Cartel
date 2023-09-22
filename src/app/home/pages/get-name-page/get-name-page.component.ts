@@ -49,6 +49,11 @@ export class GetNamePageComponent {
           return;
         }
 
+      },
+      error=>{
+        this.submiting=false;
+        this.errorBack="Error al conectar con el servidor, favor de contactar con el administrador";
+        return;
       }
     );
   }

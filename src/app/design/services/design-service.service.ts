@@ -62,7 +62,7 @@ export class DesignServiceService {
   cambiarTitulo(txt:string){
     this.titulo.next(txt);
   }
-
+  //NOMBRE DEL PROYECTO QUE SE GUARDARA
   getTitulo():string{
     return this.titulo.getValue();
   }

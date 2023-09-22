@@ -11,7 +11,7 @@
         if($connect){
             
             // VARIABLES 
-            $name=json_decode($entityBody)->name;//SE OBTIENEN VARIABLES DEL BODY
+            $name=json_decode($entityBody)->id;//SE OBTIENEN VARIABLES DEL BODY
             $byId=json_decode($entityBody)->byId;//SI ES POR ID
             $arrResultado=array();
 
@@ -22,7 +22,7 @@
             *Aquí sólo se usa uno, pero pueden ser más
             */
             if($byId=="true"){
-                $sql = "SELECT * FROM carteles WHERE nombre=?";
+                $sql = "SELECT * FROM carteles WHERE id=?";
             }else{
                 $sql = "SELECT * FROM carteles";
             }

@@ -52,8 +52,24 @@ export class BackServiceService {
   }
   //OBTENER CARTELES NO RECIBE NADA
 
-  //OBTENER CARTEL POR ID RECIBE SOLO UN NUMERO
-
+  //OBTENER CARTEL POR ID RECIBE SOLO UN NUMERO Y SE OBTIENE UNA RESPUESTA O UN ARRAY DE CARTELES
+  getCartel(id:string,byId:string):Observable<any>{
+    // console.log(
+    //     {id: id,
+    //   byId: byId}
+    // );
+    let body={
+      id: id,
+      byId: byId
+    };
+    
+    return this.http.post<any>(`${g.API_CORE}get_cartel.php`,
+    body);
+  }
   //PONER EN FINALIZADO SOLO RECIBE EL NOMBRE
-
+  finalizeCartel(name:string):Observable<Res>{
+    return this.http.post<Res>(`${g.API_CORE}finalizar_cartel.php`,{
+      name: name
+    });
+  }
 }
