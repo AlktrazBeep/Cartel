@@ -33,7 +33,7 @@ export class BackServiceService {
     let cartel_b64=btoa(encodeURIComponent(JSON.stringify(cartel)));
     //ENVIA A  /PREVIEW/CARTEL... 
     const url = this.router.createUrlTree(['../ver/preview']);
-    window.open(url.toString()+"/"+cartel_b64, '_blank');
+    window.open(url.toString().replace("/ver","#/ver")+"/"+cartel_b64, '_blank');
   }
 
   //CREAR NUEVO CARTEL RECIBE SOLO EL NOMBRE
