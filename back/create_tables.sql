@@ -7,7 +7,7 @@
 -- SI ESTE SE ENCUENTRA PUBLICADO
 CREATE TABLE carteles (
     id INT AUTO_INCREMENT PRIMARY KEY, 
-    nombre VARCHAR(20) UNIQUE, 
+    nombre VARCHAR(40) UNIQUE, 
     cartel_encoded TEXT NULL, 
     created_at TIMESTAMP NULL, 
     updated_at TIMESTAMP NULL,

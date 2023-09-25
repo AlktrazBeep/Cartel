@@ -19,7 +19,7 @@ export class ImagePipe implements PipeTransform {
       }else{
         //PONE UNA IMAGEN POR DEFAULT DE LO CONTRARIO
         return `
-        background-image: url('/assets/no-image.jpeg');
+        background-image: url('./assets/no-image.jpeg');
         background-size: cover;
         background-position: center;
         `
